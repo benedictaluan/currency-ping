@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+bases = Base.create([
+  { country_code: 'nz', country_name: 'New Zealand', currency_code: 'NZD', currency_name: 'New Zealand Dollar' }
+])
