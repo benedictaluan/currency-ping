@@ -76,4 +76,15 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.action_mailer.default_url_options = { host: 'findings.co' }
+
+  config.action_mailer.smtp_settings = {
+    port:             '587',
+    address:          'smtp.sparkpostmail.com',
+    user_name:        'SMTP_Injection',
+    password:         'c16a13a90a35a7e766e1953a4e38562e24e582fd',
+    domain:           'findings.co',
+    authentication:   :plain
+  }
 end

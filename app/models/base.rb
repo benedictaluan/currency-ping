@@ -2,6 +2,8 @@ class Base < ActiveRecord::Base
   has_many :exchange_rates
   has_many :countries, through: :exchange_rates
 
+  has_many :subscriptions
+
   PROTOCOL = 'https://'
   RATES_API = 'secure.orbitremit.com/api/rates.json'
   PARAMS = 'static=true'
@@ -25,5 +27,9 @@ class Base < ActiveRecord::Base
         rate: rate['exchangeRate']
       })
     end
+  end
+
+  def self.update_data
+    Base.all.map(&:fetch_data)
   end
 end
