@@ -83,7 +83,7 @@ Rails.application.configure do
     port:             '587',
     address:          'smtp.sparkpostmail.com',
     user_name:        'SMTP_Injection',
-    password:         'c16a13a90a35a7e766e1953a4e38562e24e582fd',
+    password:         'e9c02be3eab51c95f84ec0e8d784647620909b93',
     domain:           'findings.co',
     authentication:   :plain
   }
