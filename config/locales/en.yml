@@ -22,6 +22,8 @@
 en:
   app:
     title: Currency Ping
+    description: Get daily <strong>exchange rate</strong> alerts
+    author: Ben Aluan
 
   mailer:
     alert: Today Exchange Rates
