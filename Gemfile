@@ -25,7 +25,7 @@ gem 'haml', '~> 4.0.7'
 
 group :development, :test do
   # Call 'byebug', '~> 6.0.2' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', '~> 8.2.1'
+  # gem 'byebug', '~> 8.2.1'
 end
 
 group :development do
@@ -34,6 +34,17 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring', '~> 1.6.1'
+end
+
+group :test do
+  gem 'spring', '~> 1.6.1' # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'rspec-rails', '~> 3.4.0'
+  gem 'vcr', '~> 3.0.1'
+  gem 'webmock', '~> 1.22.3'
+  gem 'cucumber-rails', '~> 1.4.2', :require => false
+  gem 'database_cleaner', '~> 1.5.1' # database_cleaner is not required, but highly recommended
+  gem 'site_prism', '~> 2.8'
+  gem 'selenium-webdriver', '~> 2.48', '>= 2.48.1'
 end
 
 gem 'pg', '~> 0.18.4', group: :production
