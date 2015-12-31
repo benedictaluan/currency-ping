@@ -23,15 +23,7 @@ gem 'haml', '~> 4.0.7'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-group :development, :test do
-  # Call 'byebug', '~> 6.0.2' anywhere in the code to stop execution and get a debugger console
-  # gem 'byebug', '~> 8.2.1'
-end
-
 group :development do
-  # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 3.0.0'
-
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring', '~> 1.6.1'
 end
