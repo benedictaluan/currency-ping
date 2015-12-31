@@ -13,6 +13,7 @@ gem 'jbuilder', '~> 2.4.0' # Build JSON APIs with ease. Read more: https://githu
 gem 'sdoc', '~> 0.4.1', group: :doc # bundle exec rake doc:rails generates the API under doc/api.
 gem 'rest-client', '~> 1.8.0'
 gem 'haml', '~> 4.0.7'
+gem 'foundation-rails', '~> 5.5.3.2'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
