@@ -3,8 +3,20 @@
     .masthead.text-center
       %h2.description= t('app.description').html_safe
 
+%br/
+%br/
+%br/
+
 %form
   .row
-    .small-6.columns
-      / %input{ type: 'text' placeholder: 'Email' } 
-    .small-6.columns
+    .medium-7.columns.medium-centered
+      = select_tag 'base', options_from_collection_for_select(::Base.all.to_a, 'id', 'currency_name')
+  .row
+    .medium-7.columns.medium-centered
+      = select_tag 'base', options_from_collection_for_select(::Country.all.to_a, 'id', 'currency_name')
+  .row
+    .medium-7.columns.medium-centered
+      = text_field_tag 'email', '', placeholder: 'Email'
+  .row
+    .medium-7.columns.medium-centered
+      = submit_tag 'Go!', class: 'button expanded'
