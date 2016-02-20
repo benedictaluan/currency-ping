@@ -7,8 +7,8 @@ Then(/^I should see the description$/) do
 end
 
 Then(/^I should see the subscription form$/) do
-  expect(@homepage).to have_email_input
-  expect(@homepage).to have_from_select
-  expect(@homepage).to have_to_select
-  expect(@homepage).to have_submit_button
+  expect(@homepage).to have_base
+  expect(@homepage).to have_country
+  expect(@homepage).to have_email
+  expect(@homepage).to have_submit
 end

@@ -1,22 +1,29 @@
 .row
   .small-12.columns
     .masthead.text-center
-      %h2.description= t('app.description').html_safe
+      %h3.description
+        = t('app.description').html_safe
+      %p
+        = t('app.instructions')
 
 %br/
 %br/
 %br/
 
-%form
+- if flash[:notice]
+  %h2= flash[:notice]
+
+= form_for @subscription, html: { class: 'subscription-form', role: 'form' } do |f|
   .row
     .medium-7.columns.medium-centered
-      = select_tag 'base', options_from_collection_for_select(::Base.all.to_a, 'id', 'currency_name')
+      = f.select 'base', options_from_collection_for_select(::Base.all.to_a, 'id', 'currency_name')
   .row
     .medium-7.columns.medium-centered
-      = select_tag 'base', options_from_collection_for_select(::Country.all.to_a, 'id', 'currency_name')
+      = f.select 'country', options_from_collection_for_select(::Country.all.to_a, 'id', 'currency_name')
   .row
     .medium-7.columns.medium-centered
-      = text_field_tag 'email', '', placeholder: 'Email'
+      = f.fields_for 'user' do |u| 
+        = u.text_field :email, placeholder: 'Email', class: ''
   .row
     .medium-7.columns.medium-centered
-      = submit_tag 'Go!', class: 'button expanded'
+      = f.submit 'Start Monitoring!', class: 'button expanded large', id: 'subscription-submit'

@@ -22,8 +22,12 @@
 en:
   app:
     title: Currency Ping
-    description: Get <strong>exchange rate</strong> alerts
+    description: We monitor exchange rates... so you don't have to!
+    instructions: Select exchange rates and relax. We'll send you an email alert when something changes
     author: Ben Aluan
 
   mailer:
     alert: Today Exchange Rates
+
+  notice:
+    success: You have been successfully subscribed! Check your email.

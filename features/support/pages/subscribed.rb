@@ -1,7 +1,7 @@
-class HomePage < SitePrism::Page
-  set_url '/'
+class Subscribed < SitePrism::Page
+  set_url '/success'
 
-  element :logo, 'a.logo'
+  element :message, 'a.logo'
   element :description, '.description'
   element :base, 'select#subscription_base'
   element :country, 'select#subscription_country'

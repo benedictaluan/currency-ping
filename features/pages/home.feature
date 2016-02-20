@@ -7,4 +7,4 @@ Feature: Home
   Scenario: Key elements
     Then I should see the logo
     And I should see the description
-    # And I should see the subscription form
+    And I should see the subscription form

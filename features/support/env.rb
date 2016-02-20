@@ -9,6 +9,8 @@ require 'capybara'
 require 'capybara/cucumber'
 require 'selenium-webdriver'
 require 'site_prism'
+require 'email_spec' # add this line if you use spork
+require 'email_spec/cucumber'
 
 # TODO: Improve this by using a loop
 require_relative 'pages/home_page.rb'
