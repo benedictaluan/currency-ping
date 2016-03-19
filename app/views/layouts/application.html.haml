@@ -12,7 +12,8 @@
 
   %body
     .container
-      %br/
       = render 'shared/header'
-      =  yield
+      .main
+        =  yield
+      / = render 'shared/footer'
   = javascript_include_tag 'application'
