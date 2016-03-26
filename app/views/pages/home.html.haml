@@ -3,15 +3,15 @@
     .col-md-12
       .masthead.text-center
         .flash
-          %h1= flash[:notice]
-          %h3= t('notice.success_details')
+          %h1= 'Thank you for registering!'
+          %p.lead= t('notice.success_details')
 - else
   .row
     .col-md-12
       .masthead.text-center
         %h1.description
           = t('app.description').html_safe
-        %h3= t('app.instructions')
+        %p.lead= t('app.instructions')
 
     .col-md-6.col-md-offset-3
       = form_for @subscription, html: { class: 'subscription-form', role: 'form' } do |f|
