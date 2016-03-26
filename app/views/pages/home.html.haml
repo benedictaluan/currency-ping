@@ -1,9 +1,10 @@
 - if flash[:notice]
   .row
     .col-md-12
-      .flash.text-center
-        %h1= flash[:notice]
-        %h3= t('notice.success_details')
+      .masthead.text-center
+        .flash
+          %h1= flash[:notice]
+          %h3= t('notice.success_details')
 - else
   .row
     .col-md-12
@@ -15,11 +16,11 @@
     .col-md-6.col-md-offset-3
       = form_for @subscription, html: { class: 'subscription-form', role: 'form' } do |f|
         .form-group
-          = f.select 'base', options_from_collection_for_select(::Base.all.to_a, 'id', 'currency_name'), {}, { class: 'form-control input-lg' }
+          = f.select 'base_id', options_from_collection_for_select(::Base.all, 'id', 'currency_name'), {}, { class: 'form-control input-lg' }
         .form-group
-          = f.select 'country', options_from_collection_for_select(::Country.all.to_a, 'id', 'currency_name'), {}, { class: 'form-control input-lg' }
+          = f.select 'country_id', options_from_collection_for_select(::Country.all, 'id', 'currency_name'), {}, { class: 'form-control input-lg' }
         .form-group
-          = f.fields_for 'user' do |u| 
+          = f.fields_for :user do |u| 
             = u.text_field :email, placeholder: 'Email', class: 'form-control input-lg'
         .form-group
           = f.submit 'Start Monitoring!', class: 'btn btn-success btn-lg btn-block', id: 'subscription-submit'

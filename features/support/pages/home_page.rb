@@ -7,4 +7,6 @@ class HomePage < SitePrism::Page
   element :country, 'select#subscription_country'
   element :email, 'input#subscription_user_email'
   element :submit, 'input#subscription-submit'
+  
+  element :success_message, '.flash > h1'
 end

@@ -11,7 +11,7 @@ When(/^I enter my subscription details$/) do
 end
 
 Then(/^I should see a success message$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(@homepage).to have_success_message
 end
 
 Then(/^I should receive a welcome email$/) do
