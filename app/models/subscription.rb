@@ -3,6 +3,10 @@ class Subscription < ActiveRecord::Base
   belongs_to :country
   belongs_to :user
 
+  validates :base, presence: true
+  validates :country, presence: true
+  validates :user, presence: true
+
   accepts_nested_attributes_for :user
 
   def user_attributes=(value)

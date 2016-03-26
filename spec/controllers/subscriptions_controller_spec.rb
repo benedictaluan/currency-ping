@@ -9,16 +9,17 @@ RSpec.describe SubscriptionsController, type: :controller do
     before {
       base = create(:base)
       country = create(:country)
+      @subscription_params = { base_id: base, country_id: country, user_attributes: { email: 'ben@example.com' } }
     }
 
     it 'redirects to root path' do
-      post :create
+      post :create, subscription: @subscription_params
       expect(response).to redirect_to root_path
     end
 
     it 'creates a new subscription' do
       expect {
-        post :create, { email: 'benedict.aluan@gmail.com', base: 1, country: 1 }    
+        post :create, subscription: @subscription_params
       }.to change(Subscription, :count).by(1)
     end
   end

@@ -36,12 +36,13 @@ group :test do
   gem 'rspec-rails', '~> 3.4.2'
   gem 'vcr', '~> 3.0.1'
   gem 'webmock', '~> 1.24.2'
-  gem 'cucumber-rails', '~> 1.4.3', :require => false
+  gem 'cucumber-rails', '~> 1.4.3', require: false
   gem 'database_cleaner', '~> 1.5.1' # database_cleaner is not required, but highly recommended
   gem 'site_prism', '~> 2.8'
   gem 'selenium-webdriver', '~> 2.53.0', '>= 2.48.1'
   gem 'factory_girl_rails', '~> 4.6.0'
   gem 'email_spec', '~> 2.0.0'
+  gem 'shoulda-matchers', '~> 3.1.1', require: false
 end
 
 gem 'pg', '~> 0.18.4', group: :production

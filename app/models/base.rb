@@ -1,7 +1,6 @@
 class Base < ActiveRecord::Base
   has_many :exchange_rates
   has_many :countries, through: :exchange_rates
-
   has_many :subscriptions
 
   PROTOCOL = 'https://'
