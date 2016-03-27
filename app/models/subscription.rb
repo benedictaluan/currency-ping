@@ -7,6 +7,8 @@ class Subscription < ActiveRecord::Base
   validates :country, presence: true
   validates :user, presence: true
 
+  validates_uniqueness_of :user_id, scope: [:base_id, :country_id], message: 'You already have this subscription' 
+
   accepts_nested_attributes_for :user
 
   def user_attributes=(value)

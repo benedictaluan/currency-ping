@@ -31,4 +31,5 @@ en:
 
   notice:
     success: Thank you for registering!
-    success_details: Please check your email and click Confirm to activate your job.
+    success_register: Please check your email and click Confirm to activate your job.
+    success_details: We'll send you an email alert when something changes

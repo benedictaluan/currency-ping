@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'pages#home'
+  root 'subscriptions#home'
 
-  resources :subscriptions, path: 's', only: [:create]
+  resources :subscriptions, path: 's', only: [:create, :home]
 end

@@ -2,7 +2,26 @@ require 'rails_helper'
 
 RSpec.describe SubscriptionsController, type: :controller do
   describe 'routing' do
+    it { expect(get: '/').to route_to('subscriptions#home') }
     it { expect(post: '/s').to route_to('subscriptions#create') }
+  end
+
+  describe 'GET #home' do
+    it 'renders home template' do
+      get :home
+      expect(response).to render_template :home
+    end
+
+    it 'initializes a new subscription' do
+      get :home
+      expect(assigns(:subscription)).to be_a_new(Subscription)
+    end
+
+    it 'initializes a new user' do
+      get :home
+      subscription = assigns(:subscription)
+      expect(subscription.user).to be_a_new(User)
+    end
   end
 
   describe 'POST #create' do
