@@ -12,6 +12,10 @@ class UserMailer < ActionMailer::Base
     @rate = exchange_rate.rate
 
     mail to: @user.email,
-         subject: "#{t('mailer.alert')} - #{@subscription.base.currency_code}/#{@subscription.country.currency_code}"
+         subject: UserMailer.email_subject(@subscription.base, @subscription.country)
+  end
+
+  def self.email_subject(base, country)
+    "#{I18n.t('mailer.alert')} - #{base.currency_code}/#{country.currency_code}" 
   end
 end

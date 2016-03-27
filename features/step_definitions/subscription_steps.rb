@@ -14,14 +14,9 @@ Then(/^I should see a success message$/) do
 end
 
 Then(/^I should receive a subscription email alert$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(ActionMailer::Base.deliveries.last.subject).to eq UserMailer.email_subject(@exchange_rate.base, @exchange_rate.country)
 end
 
 When(/^the currency updates$/) do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-When(/^I have the following subscriptions:$/) do |table|
-  # table is a Cucumber::Core::Ast::DataTable
-  pending # Write code here that turns the phrase above into concrete actions
+  exchange_rate = FactoryGirl.create(:exchange_rate, rate: 60)
 end

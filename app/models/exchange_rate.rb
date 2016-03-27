@@ -2,7 +2,7 @@ class ExchangeRate < ActiveRecord::Base
   belongs_to :base
   belongs_to :country
 
-  before_save :notify_users
+  after_save :notify_users
 
   def notify_users
     Subscription.where({
