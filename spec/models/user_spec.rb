@@ -1,6 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
+  before {
+    allow_any_instance_of(Subscription).to receive(:notify_user) { true }
+  }
+
   it { should have_many(:subscriptions) }
 
   it 'deletes the associated subscriptions' do

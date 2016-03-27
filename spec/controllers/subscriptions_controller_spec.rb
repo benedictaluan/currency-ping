@@ -6,6 +6,10 @@ RSpec.describe SubscriptionsController, type: :controller do
     it { expect(post: '/s').to route_to('subscriptions#create') }
   end
 
+  before {
+    allow_any_instance_of(Subscription).to receive(:notify_user) { true }
+  }
+
   describe 'GET #home' do
     it 'renders home template' do
       get :home
