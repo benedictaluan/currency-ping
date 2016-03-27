@@ -9,7 +9,6 @@ Feature: Subscription
     And I enter my subscription details
     Then I should see a success message
     And "benedict.aluan@gmail.com" should receive an email
-    And I should receive a subscription email alert
 
   Scenario: Subscription alert
     When the currency updates

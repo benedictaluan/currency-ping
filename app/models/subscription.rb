@@ -11,7 +11,14 @@ class Subscription < ActiveRecord::Base
 
   accepts_nested_attributes_for :user
 
+  after_create :notify_user
+
   def user_attributes=(value)
     self.user = User.find_or_create_by(value)
+  end
+
+  def notify_user
+    exchange_rate = ExchangeRate.where(base: base, country: country).first
+    UserMailer.email_alert(exchange_rate, self).deliver_now
   end
 end
