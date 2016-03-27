@@ -18,6 +18,15 @@ header {
   }
 }
 
+.container {
+  max-width: 900px;
+  width: auto;
+  padding: 0 15px;
+
+  .text-muted {
+    margin: 20px 0;
+  }
+}
 
 .masthead {
   margin-top: 60px;

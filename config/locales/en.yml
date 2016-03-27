@@ -21,7 +21,7 @@
 
 en:
   app:
-    title: Currency Ping
+    title: CurrencyPing
     description: We monitor exchange rates... so you don't have to!
     instructions: We'll send you an email alert when something changes
     author: Ben Aluan
@@ -33,3 +33,7 @@ en:
     success: Thank you for registering!
     success_register: Please check your email and click Confirm to activate your job.
     success_details: We'll send you an email alert when something changes
+
+  footer:
+    notes: CurrencyPing
+
