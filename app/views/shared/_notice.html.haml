@@ -1,6 +1,2 @@
-.row
-  .col-md-12
-    .masthead.text-center
-      .flash
-        %h1= t('notice.success')
-        %p.lead= flash[:notice]
+.alert.alert-success{ role: 'alert' }
+  %p.text-center= "#{t('notice.success')} #{flash[:notice]}"

@@ -10,9 +10,6 @@ class SubscriptionsController < ApplicationController
     if @subscription.save
       flash[:notice] = t('notice.success_register')
       redirect_to root_path
-    elsif @subscription.errors.messages.any?
-      flash[:notice] = t('notice.success_details')
-      redirect_to root_path
     else
       render :home
     end

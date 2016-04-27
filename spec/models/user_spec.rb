@@ -5,6 +5,7 @@ RSpec.describe User, type: :model do
     allow_any_instance_of(Subscription).to receive(:notify_user) { true }
   }
 
+  it { should validate_presence_of(:email) }
   it { should have_many(:subscriptions) }
 
   it 'deletes the associated subscriptions' do

@@ -5,7 +5,7 @@ class Base < ActiveRecord::Base
 
   PROTOCOL = 'https://'
   RATES_API = 'secure.orbitremit.com/api/rates.json'
-  PARAMS = 'static=true'
+  PARAMS = 'all=true'
 
   def fetch_data
     response = RestClient.get "#{PROTOCOL}#{RATES_API}?#{PARAMS}&country=#{country_code}"
@@ -14,16 +14,16 @@ class Base < ActiveRecord::Base
     data['exchangeRates'].each do |rate|
       # Create countries if doesn't exists yet
       country = Country.find_or_create_by({
-        country_code: rate['countryCode'].upcase!,
-        currency_name: rate['currencyName'],
-        currency_code: rate['currencyCode']
+        country_code: rate['iso_code'].upcase!,
+        currency_name: rate['currency_name'],
+        currency_code: rate['currency_code']
       })
 
       # Create exchange_rates
       exchange_rate = ExchangeRate.find_or_create_by({
         base: self,
         country: country,
-        rate: rate['exchangeRate']
+        rate: rate['rate']
       })
     end
   end

@@ -25,6 +25,7 @@ en:
     description: We monitor exchange rates... so you don't have to!
     instructions: We'll send you an email alert when something changes
     author: Ben Aluan
+    disclaimer: Create your <a href="https://orbitremit.com/r/euxftu" target="_blank">OrbitRemit</a> account today and send your first payment for free.
 
   mailer:
     alert: Today Exchange Rates
