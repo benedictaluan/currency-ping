@@ -20,6 +20,8 @@
         = f.fields_for :user do |u| 
           = u.text_field :email, placeholder: 'Email', class: 'form-control input-lg'
       .form-group
+        = recaptcha_tags
+      .form-group
         = f.submit 'Start Monitoring!', class: 'btn btn-success btn-lg btn-block', id: 'subscription-submit'
 
 .row.text-center

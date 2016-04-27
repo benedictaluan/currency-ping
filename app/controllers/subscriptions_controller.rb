@@ -7,7 +7,7 @@ class SubscriptionsController < ApplicationController
   def create
     @subscription = Subscription.new(subscription_params(params))
 
-    if @subscription.save
+    if verify_recaptcha(model: @subscription) && @subscription.save
       flash[:notice] = t('notice.success_register')
       redirect_to root_path
     else

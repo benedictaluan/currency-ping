@@ -14,6 +14,7 @@ gem 'sdoc', '~> 0.4.1', group: :doc # bundle exec rake doc:rails generates the A
 gem 'rest-client', '~> 1.8.0'
 gem 'haml', '~> 4.0.7'
 gem 'bootstrap-sass', '~> 3.3.6'
+gem 'recaptcha', '~> 1.3.0', require: 'recaptcha/rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -24,6 +25,8 @@ gem 'bootstrap-sass', '~> 3.3.6'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
   
+gem 'dotenv-rails', '~> 2.1.1', :groups => [:development, :test]
+
 group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring', '~> 1.6.4'
