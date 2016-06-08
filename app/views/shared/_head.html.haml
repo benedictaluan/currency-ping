@@ -1,0 +1,7 @@
+%head
+  %meta{ charset: 'utf-8' }
+  %meta{ name: 'viewport', content: 'width=device-width, initial-scale=1.0' }
+  %title= content_for?(:title) ? yield(:title) : t('app.title')
+
+  = stylesheet_link_tag 'application'
+  = stylesheet_link_tag 'https://cdnjs.cloudflare.com/ajax/libs/pavilion/1.0.24/pavilion.min.css'
