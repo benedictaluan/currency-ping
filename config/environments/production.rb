@@ -72,19 +72,19 @@ Rails.application.configure do
   config.active_support.deprecation = :notify
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
-  config.log_formatter = ::Logger::Formatter.new
+  # config.log_formatter = ::Logger::Formatter.new
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.action_mailer.default_url_options = { host: 'mail.findings.co' }
+  # config.action_mailer.default_url_options = { host: 'mail.findings.co' }
 
-  config.action_mailer.smtp_settings = {
-    port:             '587',
-    address:          'smtp.sparkpostmail.com',
-    user_name:        'SMTP_Injection',
-    password:         'e9c02be3eab51c95f84ec0e8d784647620909b93',
-    domain:           'mail.findings.co',
-    authentication:   :plain
-  }
+  # config.action_mailer.smtp_settings = {
+  #   port:             '587',
+  #   address:          'smtp.sparkpostmail.com',
+  #   user_name:        'SMTP_Injection',
+  #   password:         'e9c02be3eab51c95f84ec0e8d784647620909b93',
+  #   domain:           'mail.findings.co',
+  #   authentication:   :plain
+  # }
 end
