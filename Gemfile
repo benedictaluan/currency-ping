@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '>= 5.0.0.rc1', '< 5.1'
-gem 'mysql2', '>= 0.3.18', '< 0.5'
+gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
 
 # UI/Assets
@@ -17,7 +17,7 @@ gem 'haml-rails', '~> 0.9.0'
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
-  gem 'rspec-rails', '~> 3.1.0'
+  gem 'rspec-rails', '~> 3.5.0.beta4'
 end
 
 group :development do
