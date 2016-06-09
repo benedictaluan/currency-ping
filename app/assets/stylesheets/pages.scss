@@ -1,0 +1,17 @@
+// Place all the styles related to the Pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// Mixins & variables first
+@import "parts/variables";
+@import "parts/mixins";
+
+a.logo {
+  font-style: normal;
+  text-decoration: none;
+  color: $primary-color;
+}
+
+.masthead {
+  height: 400px;
+}

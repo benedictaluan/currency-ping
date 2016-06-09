@@ -14,6 +14,9 @@ gem 'jquery-rails', '~> 4.1.1'
 gem 'turbolinks', '~> 5.x'
 gem 'haml-rails', '~> 0.9.0'
 
+# Authentication
+gem 'clearance', '~> 1.14.1'
+
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'

@@ -1,0 +1,8 @@
+.row-flex
+  .col-dt-60.offset-dt-20
+    .display-flex.items-center-h.items-center-v.masthead
+      = form_for @job, html: { role: 'form' } do |f|
+        = f.select 'base_id', options_from_collection_for_select(::Base.all, 'id', 'currency_name'), {}
+        = f.select 'country_id', options_from_collection_for_select(::Country.all, 'id', 'currency_name', 3), {}
+        = f.fields_for :user do |u| 
+          = u.text_field :email, placeholder: 'Email'
